@@ -17,7 +17,7 @@ class imageController extends Controller
     public function uploadImage(Request $request)
     {
         $path = Storage::putFile('image', $request->image);
-        DB::insert('insert into images (filename) values (?)', array( $path ));
+        DB::insert('insert into images (filename) values (?)', array($path));
         return response()->json(['path' => $path]);
     }
 
