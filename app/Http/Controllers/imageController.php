@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+use \App\Models\Image;
+
 class imageController extends Controller
 {
+    public function getAllImages(){
+        return Image::all();
+    }
+
     public function uploadImage(Request $request)
     {
         $path = Storage::putFile('image', $request->image);

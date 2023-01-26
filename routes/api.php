@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('images', [imageController::class, 'getAllImages']);
 Route::get('image/{path}', [imageController::class, 'getImage'])->where('path', '.*');
 Route::post('image', [imageController::class, 'uploadImage']);
-
-
-
