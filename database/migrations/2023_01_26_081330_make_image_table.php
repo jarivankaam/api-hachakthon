@@ -13,7 +13,7 @@ class MakeImageTable extends Migration
      */
     public function up()
     {
-        Schema::create('image-table', function (blueprint $table){
+        Schema::create('image-table', function (    blueprint $table){
             $table->id();
             $table->string('filename');
             $table->timestamps();
@@ -27,6 +27,6 @@ class MakeImageTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('image-table');
     }
 }
