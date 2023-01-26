@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\imageController;
+
+use App\Models\image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
+Route::get('image/{path}', [imageController::class, 'getImage'])->where('path', '.*');
+Route::post('image', [imageController::class, 'uploadImage']);
 
 
 
